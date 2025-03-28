@@ -1,0 +1,109 @@
+print('*************************************')
+print('*******supermercado comprar**********')
+print('*********faça seu pedido*************')
+produto = []
+total_compras = 0 
+valor_total_produtos =0
+valor_pagar=0
+
+
+escolha=0
+
+
+while escolha !="0":
+    print('digite a opção')
+    print("0 -sair")
+    print("1 -fazer pedido")
+    print("2 -listar pedido")
+    print("3 -pagamneto do pedido")
+    print("4 -finalizador")
+    escolha =input("escolha uma opção: ")
+    if escolha =='0':
+        escolha = input('tem certeza que voce quer SAIR ?"\n"digite 0 se for sim ou digite 5 se for não ')
+
+    if escolha =='1':
+    
+       while True:
+        i=0
+
+        try:
+            codigo_produto =(int(input('codigo do produto: ')))
+            produto.append(codigo_produto)
+            nome_produto = str(input('Nome do produto: '))
+            produto.append(nome_produto)
+            quantidade_produto = int(input('Quantidade do produto: '))
+            produto.append(quantidade_produto)
+            preco_produto = float(input('Preço do produto: R$ '))
+            produto.append(preco_produto)
+            preco_total_produto=quantidade_produto*preco_produto
+            print('Valor a pagar do produto: R$',preco_total_produto)
+            print(' ')
+            print(' ************')
+            valor_pagar=valor_pagar+preco_total_produto
+            print('Total da compra: R$',valor_pagar)
+        except : 
+            print('Digita certo')
+            continue
+
+        resp = ' '
+        resp = str(input('Deseja comprar mais produto? S/N ')).strip().upper()[0]
+
+        if resp == 'N':
+            break
+        print(' ')
+        print(' ************')
+
+        total_compras = total_compras + valor_pagar
+        print('VALOR TOTAL DOS PEDIDOS: ','R$',total_compras)
+
+    if escolha=='2':
+      print(produto)
+
+      for valor in produto:
+       print(valor)
+
+
+
+
+
+    if escolha=='3':
+
+        print('**************')
+
+        total_pagamento = total_compras
+        opcao =0
+        while opcao !="0":
+         print("forma de pagamento")
+         print('  ')
+         print('pagamento em dinheiro e debito tem 5% de desconto')
+         print('  ')
+         print('digite a opcao')
+         print('dinheiro')      
+         print('debito')
+         print('credito')
+         opcao = input('escolha uma opcao: ')
+         if opcao == '1':
+           print('pagamento em dinheiro')
+           dinheiro = total_pagamento - (total_compras*5/100)
+           print('valor total:  ',total_pagamento)
+           print('desconto 5%:  ',total_pagamento*5/100)
+           print('valor a pagar:  ',dinheiro)
+
+         if opcao == '2':
+           print('pagamento com cartaodebito em conta')
+           debito = total_pagamento - (total_compras*5/100)
+           print('valor total:  ',total_pagamento)
+           print('desconto 5%:  ',total_pagamento*5/100)
+           print('valor a pagar:  ',debito)
+
+         if opcao =='3':       
+            credito=total_pagamento
+            print('pagamento com credito')
+            print('valor a pagar:  ',credito)
+            break
+
+    if escolha =='4':
+        print('obrigado pela preferencia')
+
+
+            
