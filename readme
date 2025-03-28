@@ -1,0 +1,16 @@
+Descrição
+
+Este projeto consiste em um sistema para gerenciamento de um supermercado, permitindo o cadastro de produtos, cálculo de preços e outras funcionalidades essenciais para um controle eficiente.
+
+Funcionalidades
+
+Cadastro de produtos com nome e preço.
+
+Exibição da lista de produtos cadastrados.
+
+Cálculo do valor total das compras.
+
+Tecnologias Utilizadas
+python
+
+este trabalho esta na licença mit
